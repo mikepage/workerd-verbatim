@@ -1,0 +1,19 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Containerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/srv:ro
+
+  # docker compose run --rm check
+  check:
+    profiles: [check]
+    build:
+      context: .
+      dockerfile: Containerfile
+      target: check
+    volumes:
+      - ./:/srv:ro
