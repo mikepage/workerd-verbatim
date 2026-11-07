@@ -1,4 +1,4 @@
-import { html } from "../vendor/hono-html.js";
+import { html } from "hono/html";
 import { layout } from "./layout.ts";
 import { posts, type Post } from "./posts.ts";
 

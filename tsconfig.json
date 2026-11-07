@@ -9,7 +9,12 @@
     "erasableSyntaxOnly": true,
     "verbatimModuleSyntax": true,
     "lib": ["es2024", "webworker"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    // Bare "hono" imports resolve to the vendored types, as node_modules/hono would.
+    "paths": {
+      "hono": ["./vendor/hono/index.d.ts"],
+      "hono/*": ["./vendor/hono/*.d.ts"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "starter"]
 }

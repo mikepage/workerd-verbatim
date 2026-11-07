@@ -28,5 +28,5 @@ FROM debian:13-slim
 COPY --from=fetch /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=fetch /workerd /usr/local/bin/workerd
 WORKDIR /srv
-EXPOSE 8080
+EXPOSE 8080 8081
 CMD ["workerd", "serve", "--watch", "--experimental", "config.capnp"]

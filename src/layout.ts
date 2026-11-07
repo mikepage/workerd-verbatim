@@ -1,4 +1,4 @@
-import { html } from "../vendor/hono-html.js";
+import { html } from "hono/html";
 
 export const layout = ({ title, body }: { title: string; body: unknown }) => html`<!doctype html>
 <html lang="en">
